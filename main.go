@@ -567,7 +567,7 @@ func main() {
 	}
 	log.Println("Manager bot created successfully.")
 
-	db, err := sql.Open("sqlite", "./data/bots.db")
+	db, err := sql.Open("sqlite", "data/bots.db")
 	if err != nil {
 		log.Fatalf("Failed to connect to database: %v", err)
 	}
