@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY . .
 
-RUN CGO_ENABLED=0  go build -ldflags '-linkmode external -extldflags "-static"'  -o forwardme main.go
+RUN CGO_ENABLED=0 go build -ldflags "-s -w" -o forwardme main.go
 
 FROM alpine:latest
 
