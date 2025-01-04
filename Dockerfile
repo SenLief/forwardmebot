@@ -18,6 +18,9 @@ RUN addgroup -S appgroup && adduser -S -G appgroup appuser
 
 WORKDIR /app
 
+# Create the /app/data directory
+RUN mkdir -p /app/data && chown appuser:appgroup /app/data
+
 # Copy the executable and data with the correct permissions
 COPY --chown=appuser:appgroup --from=builder /app/forwardme /app/forwardme
 COPY --chown=appuser:appgroup --from=builder /app/data /app/data
