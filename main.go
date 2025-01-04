@@ -11,7 +11,6 @@ import (
 	"sync"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
-	"github.com/joho/godotenv"
 	_ "modernc.org/sqlite"
 )
 
@@ -556,10 +555,10 @@ func (m *BotManager) DeleteBot(token string) {
 }
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatalf("Error loading .env file: %v", err)
-	}
+	// err := godotenv.Load()
+	// if err != nil {
+	// 	log.Fatalf("Error loading .env file: %v", err)
+	// }
 
 	managerToken := os.Getenv("MANAGER_BOT_TOKEN")
 	managerBot, err := tgbotapi.NewBotAPI(managerToken)
