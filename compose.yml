@@ -1,0 +1,9 @@
+services:
+  forwardme:
+    image: janzbff/forwardme:latest
+    container_name: forwardme
+    restart: always
+    volumes:
+      - ./data:/app/data
+    environment:
+      MANAGER_BOT_TOKEN: ${MANAGER_BOT_TOKEN}
