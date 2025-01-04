@@ -9,7 +9,7 @@ RUN go mod download
 
 COPY . .
 
-RUN GOOS=linux GOARCH=amd64 go build -o forwardme main.go
+RUN  go build -o forwardme main.go
 
 FROM alpine:latest
 
