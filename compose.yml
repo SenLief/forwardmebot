@@ -1,9 +1,10 @@
 services:
   forwardme:
-    image: janzbff/forwardme:latest
+    image: janzbff/forwardme:v0.0.7
     container_name: forwardme
-    restart: always
-    volumes:
-      - ./data:/app/data
+    restart: unless-stopped
     environment:
-      MANAGER_BOT_TOKEN: ${MANAGER_BOT_TOKEN}
+      - MANAGER_BOT_TOKEN=xxxxxxxxxx
+    user: "1000:1000"
+    volumes:
+      - ./data:/app/data # Adjust the volume path as needed
